@@ -1,0 +1,8 @@
+install.packages("plotly")
+library(plotly)
+library(ggplot2)
+head(mpg)
+head(diamonds)
+#p <- ggplot(data = mpg, aes(x =displ,y= hwy,col = drv))+geom_point()
+p <- ggplot(data = diamonds, aes(x =cut,fill= clarity))+geom_bar(position = "dodge") +scale_fill_brewer(palette = 'Paired')
+ggplotly(p)
