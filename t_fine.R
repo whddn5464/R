@@ -1,0 +1,8 @@
+library(ggplot2)
+library(dplyr)
+head(mpg)
+mpg <-as.data.frame(mpg)
+mpg_diff <- mpg %>% select(class,cty) %>% filter(class %in% c("compact","suv"))
+head(mpg_diff)
+table(mpg_diff$class)
+t.test(data =mpg_diff,cty~class,var.equal =T)
